@@ -1,0 +1,23 @@
+{
+  "name": "node-typescript-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server-build": "tsc --p server/src/tsconfig.json",
+    "server-watch-tsc": "tsc --p server/src/tsconfig.json --watch",
+    "server-watch-build": "./node_modules/nodemon/bin/nodemon.js ./server/dist/index.js",
+    "server-dev": "concurrently --kill-others \"npm run server-watch-tsc\" \"npm run server-watch-build\"",
+    "server-run": "tsc --p server/src/tsconfig.json && node ./server/dist/index.js"
+  },
+  "author": "sandip baradiya <baradiya.sandip@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.11.1",
+    "@types/node": "^10.1.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.4",
+    "typescript": "^2.8.3"
+  }
+}
